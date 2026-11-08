@@ -1,0 +1,115 @@
+/*
+ * Sidebar (flex 1 1 248px, max 300px) + results (flex 999 1 520px).
+ * The huge grow value makes the results take all the remaining space.
+ */
+.page {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 32px;
+  padding-top: clamp(20px, 3vw, 36px);
+  padding-bottom: 64px;
+}
+
+.results {
+  display: flex;
+  flex: 999 1 520px;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0; /* lets the grid shrink inside the flex row instead of overflowing */
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 24px;
+}
+
+.headingGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.title {
+  font-size: clamp(24px, 2.4vw, 30px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.summary {
+  min-height: 21px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---------- Sort select ---------- */
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.selectWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.selectWrapper select {
+  height: var(--control-height);
+  padding: 0 40px 0 14px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-10);
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  appearance: none; /* hide the browser's arrow; we draw our own chevron */
+}
+
+.selectWrapper select:hover {
+  border-color: var(--ink);
+}
+
+.chevron {
+  position: absolute;
+  right: 14px;
+  pointer-events: none;
+}
+
+/* ---------- Mobile "Filters" toggle ---------- */
+.filterToggle {
+  display: none;
+}
+
+@media (max-width: 859px) {
+  .filterToggle {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    height: var(--control-height);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-10);
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  /* Smaller gap between the toggle, the open panel and the results */
+  .page {
+    gap: 20px;
+  }
+}

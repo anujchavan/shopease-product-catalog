@@ -1,0 +1,48 @@
+.skeleton {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--skeleton);
+}
+
+/* A white highlight that slides across the block */
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.75), transparent);
+  animation: shimmer 1.3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-14);
+}
+
+.image {
+  aspect-ratio: 1;
+  border-radius: var(--radius-10);
+}
+
+.bar {
+  margin: 0 4px;
+}
+
+.bar:last-child {
+  margin-bottom: 6px;
+}

@@ -1,0 +1,50 @@
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.stars {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--star-off);
+}
+
+.filled {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--amber);
+}
+
+.value {
+  color: var(--muted);
+}
+
+/* Sizes: card (12px), review card (13px), detail page (16px) */
+.sm {
+  font-size: 12px;
+}
+
+.md {
+  font-size: 13px;
+}
+
+.lg {
+  gap: 10px;
+  font-size: 14px;
+}
+
+.lg .stars {
+  font-size: 16px;
+  letter-spacing: 2px;
+}
+
+.lg .value {
+  font-weight: 600;
+  color: var(--ink-3);
+}

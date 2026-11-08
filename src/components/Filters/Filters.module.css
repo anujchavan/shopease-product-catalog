@@ -1,0 +1,226 @@
+/* ---------- Sidebar panel ---------- */
+.sidebar {
+  display: flex;
+  flex: 1 1 248px;
+  flex-direction: column;
+  gap: 22px;
+  max-width: 300px;
+  min-width: 0;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-14);
+}
+
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sidebarTitle {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+/* "Show N results" only exists on mobile */
+.showResults {
+  display: none;
+  height: 46px;
+}
+
+/* Mobile: hidden until opened, then full width */
+@media (max-width: 859px) {
+  .sidebar {
+    display: none;
+    max-width: 100%;
+    flex-basis: 100%;
+  }
+
+  .sidebarOpen {
+    display: flex;
+  }
+
+  .showResults {
+    display: inline-flex;
+  }
+}
+
+/* ---------- Filter group (Category / Price / Brand) ---------- */
+.section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0;
+  padding: 22px 0 0;
+  border: none;
+  border-top: 1px solid var(--border-soft);
+}
+
+/* The first group sits right under the "Filters" title, no divider */
+.sidebarHeader + .section {
+  padding-top: 0;
+  border-top: none;
+}
+
+.legend {
+  float: left; /* makes <legend> behave like a normal block inside the fieldset */
+  width: 100%;
+  padding: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.hint {
+  position: absolute;
+  top: 22px;
+  right: 0;
+  font-size: 12px;
+  line-height: 16px;
+  color: var(--muted);
+}
+
+.sidebarHeader + .section .hint {
+  top: 0;
+}
+
+/* Scrollable list of rows */
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-height: 280px;
+  margin: 0 -8px;
+  padding: 0 8px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.row {
+  /* Anchors the visually-hidden input to its own row. Without this, hidden inputs of rows
+     scrolled out of the list escape it and stretch the page with empty space. */
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--radius-8);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.row:hover {
+  background: var(--hover-bg);
+}
+
+/* Keyboard focus lands on the hidden input, so we draw the ring on the row */
+.row:has(input:focus-visible) {
+  outline: 2px solid var(--ink);
+  outline-offset: -2px;
+}
+
+.rowSelected,
+.rowSelected:hover {
+  background: var(--ink);
+  color: #fff;
+  font-weight: 700;
+}
+
+.loadingList {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 6px 0;
+}
+
+/* ---------- Brand checkbox ---------- */
+.checkbox {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border: 1.5px solid var(--checkbox-off);
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  color: #fff;
+}
+
+.checkboxOn {
+  background: var(--ink);
+  border-color: var(--ink);
+}
+
+.brandName {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.count {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ---------- Price inputs ---------- */
+.priceRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 8px;
+}
+
+.priceField {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  height: 42px;
+  padding: 0 10px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-8);
+  font-size: 14px;
+}
+
+.priceField:focus-within {
+  border-color: var(--ink);
+}
+
+.priceFieldInvalid {
+  border-color: var(--danger);
+}
+
+.priceField input {
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+/* ---------- Small text ---------- */
+.muted {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.priceRow .muted {
+  font-size: 14px;
+}
+
+.error {
+  font-size: 13px;
+  color: var(--danger);
+}

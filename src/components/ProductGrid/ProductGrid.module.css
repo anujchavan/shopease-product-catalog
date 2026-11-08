@@ -1,0 +1,19 @@
+/*
+ * auto-fill: the browser fits as many columns as possible,
+ * each at least 210px wide. No breakpoints needed for the column count.
+ */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: var(--grid-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Phones: smaller minimum so we still get 2 columns */
+@media (max-width: 519px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+}

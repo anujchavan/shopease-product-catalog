@@ -1,0 +1,219 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding-top: clamp(16px, 3vw, 32px);
+  padding-bottom: 64px;
+}
+
+/* Image left, details right; wraps to one column when there isn't room */
+.article {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: clamp(24px, 4vw, 56px);
+  padding: var(--panel-padding);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-18);
+}
+
+.info {
+  display: flex;
+  flex: 1 1 360px;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+/* ---------- Title + rating ---------- */
+.titleBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.title {
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  text-wrap: balance;
+}
+
+.ratingRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.divider {
+  width: 1px;
+  height: 14px;
+  background: var(--border-strong);
+}
+
+.reviewLink {
+  padding: 0;
+  background: none;
+  border: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ---------- Price + stock ---------- */
+.priceBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.priceRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+}
+
+.price {
+  font-size: clamp(30px, 3vw, 38px);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.originalPrice {
+  font-size: 17px;
+  color: var(--muted);
+  text-decoration: line-through;
+}
+
+.discount {
+  padding: 5px 9px;
+  background: var(--danger-bg);
+  border-radius: var(--radius-6);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--danger);
+}
+
+.stock {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.stockDot {
+  width: 8px;
+  height: 8px;
+  background: currentColor;
+  border-radius: 50%;
+}
+
+.stockNote {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.success {
+  color: var(--success);
+}
+
+.warn {
+  color: var(--warn);
+}
+
+.danger {
+  color: var(--danger);
+}
+
+/* ---------- Brand / Category ---------- */
+.specs {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 12px 32px;
+  margin: 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  font-size: 14px;
+}
+
+.specs dt {
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.specs dd {
+  margin: 0;
+}
+
+.brand {
+  font-weight: 700;
+}
+
+/* ---------- Description ---------- */
+.descriptionBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subheading {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  max-width: 68ch;
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--ink-3);
+  text-wrap: pretty;
+}
+
+/* ---------- Shipping / warranty / returns ---------- */
+.services {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 16px 18px;
+  background: var(--detail-bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-12);
+  list-style: none;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-2);
+}
+
+.services li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.services svg {
+  flex: none;
+  color: var(--ink-3);
+}
+
+/* ---------- Loading skeleton ---------- */
+.skeletonImage {
+  flex: 1 1 340px;
+  max-width: 600px;
+  aspect-ratio: 1;
+  border-radius: var(--radius-14);
+}
+
+.skeletonInfo {
+  gap: 16px;
+  padding-top: 12px;
+}

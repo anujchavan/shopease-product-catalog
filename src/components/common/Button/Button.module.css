@@ -1,0 +1,66 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  flex: none;
+  height: var(--control-height);
+  padding: 0 18px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-10);
+  font-size: 14px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.primary {
+  background: var(--ink);
+  color: #fff;
+  padding: 0 20px;
+}
+
+.primary:hover:not(:disabled) {
+  background: var(--accent);
+}
+
+.outline {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--ink);
+}
+
+.outline:hover:not(:disabled) {
+  border-color: var(--ink);
+}
+
+/* Outline with an ink border, fills dark on hover (used for "Reset search and filters") */
+.outlineInk {
+  background: transparent;
+  border-color: var(--ink);
+  color: var(--ink);
+  padding: 0 20px;
+}
+
+.outlineInk:hover:not(:disabled) {
+  background: var(--ink);
+  color: #fff;
+}
+
+/* Looks like a text link: "Clear all", "Retry" */
+.link {
+  height: auto;
+  padding: 0;
+  background: none;
+  font-size: 13px;
+  color: var(--accent);
+}
+
+.link:hover:not(:disabled) {
+  text-decoration: underline;
+}
