@@ -2,7 +2,7 @@
 
 An Amazon-style product catalog built with **React 19**, **React Router** and plain **CSS Modules**, using the [DummyJSON Products API](https://dummyjson.com/docs/products).
 
-🔗 **Live demo:** _coming soon_
+🔗 **Live demo:** [shopease-product-catalog.netlify.app](https://shopease-product-catalog.netlify.app)
 
 ---
 
